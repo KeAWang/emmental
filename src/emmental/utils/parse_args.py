@@ -803,8 +803,8 @@ def parse_args(parser: Optional[ArgumentParser] = None) -> ArgumentParser:
         "--writer",
         type=str,
         default="tensorboard",
-        choices=["json", "tensorboard"],
-        help="The writer format (json, tensorboard)",
+        choices=["json", "tensorboard", "wandb"],
+        help="The writer format (json, tensorboard, wandb)",
     )
 
     logging_config.add_argument(
