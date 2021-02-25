@@ -8,6 +8,7 @@ from torch.optim.optimizer import Optimizer
 from emmental.logging.checkpointer import Checkpointer
 from emmental.logging.log_writer import LogWriter
 from emmental.logging.tensorboard_writer import TensorBoardWriter
+from emmental.logging.wandb_writer import WandbWriter
 from emmental.meta import Meta
 from emmental.model import EmmentalModel
 
@@ -111,6 +112,8 @@ class LoggingManager(object):
             self.writer = LogWriter()
         elif writer_opt == "tensorboard":
             self.writer = TensorBoardWriter()
+        elif writer_opt == "wandb":
+            self.writer = WandbWriter()
         else:
             raise ValueError(f"Unrecognized writer option '{writer_opt}'")
 
