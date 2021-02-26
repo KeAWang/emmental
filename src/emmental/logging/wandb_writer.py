@@ -40,7 +40,7 @@ class WandbWriter(LogWriter):
           step: The current step.
         """
         info = {name: value}
-        self.experiment.log(info)
+        self.experiment.log(info, step=int(step))
 
     def write_log(self, log_filename: str = "log.json") -> None:
         """Dump the log to file.
